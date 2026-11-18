@@ -5,9 +5,12 @@ import subprocess
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+
+API_KEY = os.environ.get("PIXABAY_API_KEY")
+
 if not API_KEY:
     raise RuntimeError("Missing PIXABAY_API_KEY GitHub secret")
+
 
 OUT = Path("output")
 ASSETS = Path("assets")
