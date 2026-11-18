@@ -5,7 +5,7 @@ import subprocess
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
-API_KEY = os.environ.get("PIXABAY_API_KEY")
+PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
 if not API_KEY:
     raise RuntimeError("Missing PIXABAY_API_KEY GitHub secret")
 
