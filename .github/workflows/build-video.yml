@@ -1,4 +1,4 @@
-
+why
 name: CYBERNEXUS Video Builder
 
 on:
@@ -31,11 +31,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      
       - name: Build CYBERNEXUS video
         env:
-          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_API_KEY: $.       {{ secrets.PIXABAY_API_KEY }}
         run: |
           python build_video.py
+
 
       - name: Save finished video
         uses: actions/upload-artifact@v4
